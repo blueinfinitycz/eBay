@@ -14,7 +14,7 @@ const SearchField = () => {
   const onSubmit = (values: ISearch) => {
     dispatch(retrieveData(values));
   };
-  const validationSchema = Yup.object({ search: Yup.string().required('Vyplňte název knihy') });
+  const validationSchema = Yup.object({ search: Yup.string().required('Search empty field') });
   const handleChangeSchema = (e: any) => {
     dispatch(retrieveData({ search: e }));
   };
@@ -33,7 +33,7 @@ const SearchField = () => {
             </Col>
             <Col>
               <Button type="submit" size="lg" loading={false}>
-                Vyhledat
+                Search
               </Button>
             </Col>
           </Row>

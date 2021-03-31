@@ -5,7 +5,7 @@ import SearchField from '../Form/SearchField';
 
 const Header = styled.header`
   background: #62c7b6 url(${headerBg}) top left no-repeat;
-  border-radius: 5px;
+  border-radius: 0 0 0 5px;
   padding: 50px 0;
   min-height: 178px;
   text-align: center;
