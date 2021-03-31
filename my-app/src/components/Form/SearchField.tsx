@@ -2,11 +2,20 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 import * as Yup from 'yup';
 import { retrieveData } from '../../redux/actions';
 import { ISearch } from '../../types/searchField';
 import Button from '../Button';
 import Input from '../Input';
+
+const ErrorContaier = styled.span`
+  fontsize: 17px;
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+`;
 
 const SearchField = () => {
   const dispatch = useDispatch();
@@ -26,10 +35,7 @@ const SearchField = () => {
           <Row lg={6} className="justify-content-center">
             <Col lg={8}>
               <Field type="text" as={Input} id="search" name="search" setFieldValue={true} validate={handleChangeSchema} />
-              <ErrorMessage
-                name="search"
-                component={(props) => <span style={{ fontSize: '17px', color: 'white', margin: '0', padding: '0', textAlign: 'center' }}>{props.children}</span>}
-              />
+              <ErrorMessage name="search" component={(props) => <ErrorContaier>{props.children}</ErrorContaier>} />
             </Col>
             <Col>
               <Button type="submit" size="lg" loading={false}>
