@@ -29,6 +29,7 @@ module.exports = {
     '@typescript-eslint/camelcase': 0,
     '@typescript-eslint/ban-ts-comment': 0,
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': 0,
     'import/no-named-as-default': 0,

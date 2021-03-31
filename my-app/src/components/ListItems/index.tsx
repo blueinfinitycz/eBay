@@ -8,12 +8,13 @@ const ListItems = () => {
   const searchFieldData = useSelector(searchField);
   const wishListData = useSelector(wishList);
   const { isLoading } = useSelector((state: any) => state.AppReducer);
+
   return (
     <Row>
       <Col>
         {isLoading && <span>... Loading</span>}
         {searchFieldData &&
-          searchFieldData.length > 0 &&
+          searchFieldData.length &&
           searchFieldData.map((item: any, index: number) => (
             <div key={index.toString()}>
               <ListItem

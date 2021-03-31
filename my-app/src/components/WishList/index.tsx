@@ -55,12 +55,8 @@ const WishListItem = ({ name, id }: IItem) => {
 };
 
 const WishList = () => {
-  const dispatch = useDispatch();
   const wishListData = useSelector(wishList);
 
-  const onClickItem = (idItem: number) => {
-    dispatch(removeFromWishList(idItem));
-  };
   return (
     <WishListContainer>
       <h3 className="title">Wish list</h3>

@@ -18,7 +18,7 @@ export interface IWishListAction {
   payload: IItem;
 }
 
-const WishListReducer = (state = initState, action: IWishListAction) => {
+const reducer = (state = initState, action: IWishListAction) => {
   if (action.type === ADD_TO_WISHLIST) {
     return { ...state, wishListData: [...state.wishListData, action.payload] };
   }
@@ -30,4 +30,4 @@ const WishListReducer = (state = initState, action: IWishListAction) => {
   return { ...state };
 };
 
-export default WishListReducer;
+export default reducer;

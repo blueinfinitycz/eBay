@@ -12,11 +12,11 @@ const requestRemoveToWishList = (id: number) => ({ type: REMOVE_FROM_WISHLIST, p
 
 const filterData = (data: IJson, searchedTxt: ISearch) => {
   const { items } = data;
-  return items.filter((item) => item.volumeInfo.title.split(' ').find((itm) => itm.toLowerCase() === searchedTxt.search.toLowerCase()));
+  return items.filter((item) => item.volumeInfo.title.toLowerCase().includes(searchedTxt.search.toLowerCase()));
 };
 
 export const retrieveData = (searchedText: ISearch) => {
-  return (dispatch: (arg: { type: string; payload?: {} | string }) => void) => {
+  return (dispatch: (arg: { type: string; payload?: unknown | string }) => void) => {
     dispatch(requestStart());
 
     // EASY WAY TO USE FOR LOCAL PURPOSE (with debouncing)

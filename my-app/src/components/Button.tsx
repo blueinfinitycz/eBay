@@ -63,27 +63,22 @@ const SButton = styled.button<{ $primary?: boolean; $secondary?: boolean; $loadi
           font-size: 10px;
           padding: 7px 10px;
         `;
-        break;
       case 'sm':
         return css`
           padding: 5px 15px;
         `;
-        break;
       case 'md':
         return css`
           padding: 10px 20px;
         `;
-        break;
       case 'lg':
         return css`
           padding: 15px 25px;
         `;
-        break;
       default:
         return css`
           padding: 10px 20px;
         `;
-        break;
     }
   }}
 `;
